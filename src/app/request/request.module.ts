@@ -1,14 +1,22 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RequestGetComponent } from './request-get/request-get.component';
+import { RequestResultComponent } from './request-result/request-result.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
-import { GetComponent } from './get/get.component';
 
 @NgModule({
   declarations: [
-    GetComponent
+    RequestGetComponent,
+    RequestResultComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    ReactiveFormsModule
+  ],
+  exports:[
+    RequestGetComponent,
+    RequestResultComponent
   ]
 })
 export class RequestModule { }

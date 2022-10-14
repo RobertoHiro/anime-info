@@ -1,0 +1,12 @@
+<form #f="ngForm"
+class="form-horizontal"
+[formGroup]="formulario"
+(ngSubmit)="onSubmit(f)">
+    <div class="form-group">
+        <label class="control-label col-ms-12">Titulo do anime</label>
+        <input type="text"
+        class="col-ms-12 form-control"
+        formControlName="titulo">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

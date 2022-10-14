@@ -11,7 +11,6 @@ export class RequestGetComponent implements OnInit {
 
   formulario: FormGroup = new FormGroup({});
 
-  @Input() resultList:any;
 
   @Output() resultLoaded = new EventEmitter<any>();
 
@@ -31,8 +30,7 @@ export class RequestGetComponent implements OnInit {
     get(`https://animechan.vercel.app/api/quotes/anime?title=`+f.value.titulo).
     subscribe(x=>{
       console.log(x);
-      this.resultList = x;
-      this.resultLoaded.emit(this.resultList);
+      this.resultLoaded.emit(x);
     });
   }
 

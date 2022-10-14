@@ -9,15 +9,16 @@ export class RequestResultComponent implements OnInit {
 
   @Input() resultList:any;
 
+  teste:any;
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  /*
   @Output() receiveResult(result:any){
     console.log(result);
 
   }
-  */
+
 }

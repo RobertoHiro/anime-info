@@ -1,3 +1,6 @@
-<app-request-get [resultList]="resultList" (resultLoaded)="updateResiltList($event)"></app-request-get>
+<app-request-get #get
+(resultLoaded)="updateResiltList($event)"></app-request-get>
 
-<app-request-result [resultList]="resultList"></app-request-result>
+<app-request-result
+#result
+[resultList]="resultList"></app-request-result>

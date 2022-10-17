@@ -11,9 +11,10 @@ export class RequestGetComponent implements OnInit {
 
   formulario: FormGroup = new FormGroup({});
 
+  @Input() animeList:any;
+  searchText = '';
 
   @Output() resultLoaded = new EventEmitter<any>();
-
 
   constructor(private http:HttpClient) { }
 

@@ -1,5 +1,11 @@
+
+
+<!--app-search-animes
+[animeList]="animeList"></app-search-animes-->
+
 <app-request-get #get
-(resultLoaded)="updateResiltList($event)"></app-request-get>
+(resultLoaded)="updateResiltList($event)"
+[animeList]="animeList"></app-request-get>
 
 <app-request-result
 #result

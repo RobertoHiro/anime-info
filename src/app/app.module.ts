@@ -8,11 +8,17 @@ import { RequestComponent } from './request/request.component';
 import { RequestModule } from './request/request.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
+import { DropDownsModule } from '@progress/kendo-angular-dropdowns';
+import { GridModule } from '@progress/kendo-angular-grid';
+import { SearchAnimesComponent } from './search-animes/search-animes.component';
+import { FilterPipe } from './search-animes/filter.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    RequestComponent
+    RequestComponent,
+    SearchAnimesComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
@@ -22,6 +28,8 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    DropDownsModule,
+    GridModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

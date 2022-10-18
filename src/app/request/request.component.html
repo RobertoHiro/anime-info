@@ -1,0 +1,35 @@
+
+
+<!--app-search-animes
+[animeList]="animeList"></app-search-animes-->
+
+<div class="ng-autocomplete">
+    <label class="control-label col-ms-12">Anime Title</label>
+    <ng-autocomplete 
+        [data]="animeList"
+        [searchKeyword]="keyword"
+        placeholder="Select anime"
+        (selected)='selectEvent($event)'
+        (inputChanged)='onChangeSearch($event)'
+        (inputFocused)='onFocused($event)'
+        [itemTemplate]="itemTemplate"
+        [notFoundTemplate]="notFoundTemplate">                                 
+    </ng-autocomplete>
+
+    <ng-template #itemTemplate let-item>
+    <a [innerHTML]="item.name"></a>
+    </ng-template>
+
+    <ng-template #notFoundTemplate let-notFound>
+    <div [innerHTML]="notFound"></div>
+    </ng-template>
+</div>
+
+<!--app-request-get #get
+(resultLoaded)="updateResiltList($event)"
+[animeList]="animeList"></app-request-get-->
+
+<app-request-result
+#result
+[resultList]="resultList"
+*ngIf="apiSelected == 0"></app-request-result>

@@ -7,7 +7,7 @@ import { Component, Input, OnInit, Output } from '@angular/core';
 })
 export class RequestResultComponent implements OnInit {
 
-  @Input() resultList:any;
+  @Input() resultList:any[]=new Array();
 
   teste:any;
 

@@ -16,14 +16,29 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatInputModule } from '@angular/material/input';
 import { AutocompleteLibModule } from 'angular-ng-autocomplete';
+import { RouterModule, Routes } from '@angular/router';
+import { AnimenewsComponent } from './animenews/animenews.component';
+import { AnimeFactComponent } from './anime-fact/anime-fact.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule, } from '@angular/material/core';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 
+
+const routes: Routes = [
+  { path: '', redirectTo: '/request', pathMatch: 'full' },
+  { path: 'request', component: RequestComponent },
+  { path: 'aninews', component: AnimenewsComponent },
+  { path: 'anifact', component: AnimeFactComponent },
+];
 
 @NgModule({
   declarations: [
     AppComponent,
     RequestComponent,
     SearchAnimesComponent,
-    FilterPipe
+    FilterPipe,
+    AnimenewsComponent,
+    AnimeFactComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,7 +54,12 @@ import { AutocompleteLibModule } from 'angular-ng-autocomplete';
     MatFormFieldModule,
     MatInputModule,
     AutocompleteLibModule,
+    RouterModule.forRoot(routes),
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatProgressBarModule,
   ],
+  exports: [RouterModule],
   providers: [],
   bootstrap: [AppComponent]
 })

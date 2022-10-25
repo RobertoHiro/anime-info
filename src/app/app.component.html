@@ -1,4 +1,16 @@
 
-<div class="container">
-    <app-request></app-request>
+
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand">Angular Router</a>
+        <ul class="nav navbar-nav nav-pils justify-content-end" routerLinkActive="active">
+            <li class="nav-item"><a class="nav-link" routerLink="request">AnimeQuotes</a></li>
+            <li class="nav-item"><a class="nav-link" routerLink="aninews">AnimeNews</a></li>
+            <li class="nav-item"><a class="nav-link" routerLink="anifact">AnimeFact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container mt-5 pt-4">
+    <router-outlet></router-outlet>
 </div>

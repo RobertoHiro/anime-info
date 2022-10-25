@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -15,26 +16,17 @@ export class RequestComponent implements OnInit {
 
   animeList:any;
 
-  apiSelected=0;
+  @Input() apiSelected=0;
 
-  apiList=[
-    {
-      name:'animechan',
-      id:0,
-      urlAnimeList:`https://animechan.vercel.app/api/available/anime`
-    },
-    {
-      name:'animenewsnetwork',
-      id:1,
-      urlAnimeList:'https://www.animenewsnetwork.com/encyclopedia/reports.php?id=155&nlist=all'
-    },
-  ];
+  @Input() apiList=[];
 
   constructor(private http: HttpClient) {
    }
 
+  sub:any;
+
   ngOnInit(): void {
-    this.getAnimeAvaliableList(this.apiList[this.apiSelected].urlAnimeList);
+    this.getAnimeAvaliableList('https://animechan.vercel.app/api/available/anime');
   }
 
   keyword = 'name';

@@ -28,6 +28,9 @@
     [itemTemplate]="itemTemplate"
     [notFoundTemplate]="notFoundTemplate">                                 
   </ng-autocomplete>
+
+  <mat-progress-bar mode="query" *ngIf="animeList == 0"></mat-progress-bar>
+
   
   <ng-template #itemTemplate let-item>
   <a [innerHTML]="item.name"></a>

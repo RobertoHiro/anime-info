@@ -9,6 +9,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatInputModule } from '@angular/material/input';
 import { AutocompleteLibModule } from 'angular-ng-autocomplete';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+
 
 @NgModule({
   declarations: [
@@ -23,6 +25,7 @@ import { AutocompleteLibModule } from 'angular-ng-autocomplete';
     MatFormFieldModule,
     MatInputModule,
     AutocompleteLibModule,
+    MatProgressBarModule,
   ],
   exports:[
     RequestGetComponent,

@@ -1,8 +1,5 @@
 
 
-<!--app-search-animes
-[animeList]="animeList"></app-search-animes-->
-
 <div class="ng-autocomplete">
     <label class="control-label col-ms-12">Anime Title</label>
     <ng-autocomplete 
@@ -10,8 +7,6 @@
         [searchKeyword]="keyword"
         placeholder="Select anime"
         (selected)='selectEvent($event)'
-        (inputChanged)='onChangeSearch($event)'
-        (inputFocused)='onFocused($event)'
         [itemTemplate]="itemTemplate"
         [notFoundTemplate]="notFoundTemplate">                                 
     </ng-autocomplete>
@@ -27,11 +22,19 @@
     </ng-template>
 </div>
 
-<!--app-request-get #get
-(resultLoaded)="updateResiltList($event)"
-[animeList]="animeList"></app-request-get-->
+<div *ngIf="animeFactList.length == 0"
+class="border rounded border-info p-2 my-3">
+  <p>Anime facts</p>
+</div>
 
-<app-request-result
-#result
-[resultList]="resultList"
-*ngIf="apiSelected == 0"></app-request-result>
+<mat-progress-bar mode="query" *ngIf="animeList.length == 0 && animeFactList.length != 0">
+
+</mat-progress-bar>
+
+
+<div
+*ngFor="let result of animeFactList"
+class="border rounded border-info p-2 my-3"
+>
+  <p>{{ result.fact }}</p>
+</div>
